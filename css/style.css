@@ -1,0 +1,82 @@
+.cadastro {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.cadastro-form h1 {
+    margin-top: 30px;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.cadastro-form form {
+    margin-top: 30px;
+}
+
+.cpf-creci {
+    display: flex;
+}
+
+#cpf, #creci {
+    width: 100%;
+}
+
+#nome {
+    width: 98%;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+
+    background-color: #4b99ff;
+    color: #fff;
+
+    border-color: #4b99ff;
+}
+
+.btn:hover {
+    background-color: #73b0ff;
+}
+
+.tabela-cadastro {
+    margin-top: 50px;
+    table-layout: fixed;
+    display: flow-root;
+}
+
+.tabela-cadastro th, td {
+    padding: .9em;
+    margin: 0;
+    border: 1px solid #000000;
+    text-align: center;
+    width: 10em;
+}
+
+.tabela-cadastro th {
+    background-color: #f0f0f0;
+    
+    font-weight: bold;
+}
+
+body a {
+    text-decoration: none;
+    color: #000000;
+
+    font-weight: bold;
+
+    padding: 10px;
+}
+
+body a:hover {
+    transition: 2ms;
+
+    color: #9b9e00;
+    text-decoration: underline;
+
+    font-size: 15px;
+}
