@@ -1,7 +1,7 @@
 <?php
 
 // Captura dados do formulário
-$cpf = addslashes($_POST["cpf"]);
+$cpf = $_POST["cpf"];
 $creci = addslashes($_POST["creci"]);
 $nome = addslashes($_POST["nome"]);
 
