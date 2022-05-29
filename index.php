@@ -26,35 +26,38 @@
                 </form>
             </div>
 
-            <div class="tabela-cadastro">
-                <table id="tabela">
-                    <thead class="cabecalho">
-                        <tr>
-                            <th>ID</th>
-                            <th>Nome</th>
-                            <th>CPF</th>
-                            <th>Creci</th>
-                            <th rowspan="2">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody class="tabela-corpo">
-                        <!-- Informações de cadastro -->
-                        <?php
-                            // Abre conexão com banco de dados e lista cadastros
-                            $server = "localhost";
-                            $usuario = "root";
-                            $senha = "";
-                            $db = "thiago_brito";
+            <?php
+                // Abre conexão com banco de dados e lista cadastros
+                $server = "localhost";
+                $usuario = "root";
+                $senha = "";
+                $db = "thiago_brito";
 
-                            $conexao = mysqli_connect($server, $usuario, $senha);
+                $conexao = mysqli_connect($server, $usuario, $senha);
 
-                            mysqli_select_db($conexao, $db) or die("Erro na abertura do banco de dados:<br>" . mysqli_error($conexao));
+                mysqli_select_db($conexao, $db) or die("Erro na abertura do banco de dados:<br>" . mysqli_error($conexao));
 
-                            $sql = "SELECT * FROM corretor ORDER BY id";
-                            $cadastros = mysqli_query($conexao, $sql);
+                $sql = "SELECT * FROM corretor ORDER BY id";
+                $cadastros = mysqli_query($conexao, $sql);
 
-                            $linhas = mysqli_num_rows($cadastros);
+                $linhas = mysqli_num_rows($cadastros);
 
+                if ($linhas > 0) {
+
+                echo '<div class="tabela-cadastro">';
+                    echo '<table id="tabela">';
+                        echo '<thead class="cabecalho">';
+                            echo '<tr>';
+                                echo '<th>ID</th>';
+                                echo '<th>Nome</th>';
+                                echo '<th>CPF</th>';
+                                echo '<th>Creci</th>';
+                                echo '<th rowspan="2">Ações</th>';
+                            echo '</tr>';
+                        echo '</thead>';
+                        echo '<tbody class="tabela-corpo">';
+                        
+                        // Informações de cadastro
                             for($n=0; $n<$linhas;$n++) {
                                 $dados = mysqli_fetch_array($cadastros);
                                 $id = $dados["id"];
@@ -77,7 +80,8 @@
                                     </td>";
                                 echo "</tr>";
                             }
-                        ?>
+                        }
+                    ?>
                     </tbody>
                 </table>
             </div>
